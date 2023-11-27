@@ -1,0 +1,8 @@
+*.sqlite3
+.env
+soja/migrations
+soja/__pycache__
+usuario/__pycache__
+usuario/migrations
+ferrugem/migrations
+ferrugem/__pycache__
