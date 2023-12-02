@@ -19,8 +19,10 @@ from django.urls import path, include
 from soja import views
 
 urlpatterns = [
+    path('appmapas/', include('appmapas.urls')),
     path('admin/', admin.site.urls),
     path('auth/api/', include('usuario.urls')),
     path('', views.Testarotas, name='TestaRotas'),
     path('api/', include('ferrugem.urls')),
+    path('frontend/', include('frontend.urls')),
 ]

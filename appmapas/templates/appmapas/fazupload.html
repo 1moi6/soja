@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload de Imagem</title>
+  </head>
+  <body>
+    <h2>Upload de Imagem</h2>
+
+    <input type="file" id="imagemInput" accept="image/*" />
+    <br />
+    <label for="nomeInput">Nome:</label>
+    <input type="text" id="nomeInput" required />
+    <br />
+    <button type="button" onclick="uploadImagem()">Enviar</button>
+
+    <script>
+      function uploadImagem() {
+        const imagemInput = document.getElementById("imagemInput");
+        const nomeInput = document.getElementById("nomeInput");
+
+        const imagemArquivo = imagemInput.files[0];
+        const nome = nomeInput.value;
+
+        // Certifique-se de substituir 'access_token_aqui' pelo seu token de acesso real
+        const accessToken =
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxNzYzNDIzLCJpYXQiOjE3MDE0NjM0MjMsImp0aSI6Ijg2MGM5Y2UzN2VhNTQ2NjQ4OTk5Yzc1MzYxMzM5MjhhIiwidXNlcl9pZCI6MSwiZW1haWwiOiJtb2lzZWlzQGdtYWlsLmNvbSIsIm5vbWUiOiJtb2lzZWlzIiwic29icmVub21lIjoiY2VjY29uZWxsbyIsImNsaW5pY2EiOiJzYW50YSBsdXppYSIsImNucGoiOiIxMjM0NTYifQ.EOGMMJ9mGuxctkbrey5-dLfvimIhge1hWqY4Qw0DAI8";
+
+        const formData = new FormData();
+        formData.append("mapa", imagemArquivo);
+        formData.append("nome", nome);
+
+        fetch("http://127.0.0.1:8000/api/mapas/upload/", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+          body: formData,
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Falha no upload da imagem");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            // Faça algo com a resposta da API, se necessário
+            console.log(data);
+          })
+          .catch((error) => {
+            console.error("Erro durante o upload da imagem:", error);
+            // Trate o erro de upload aqui, se necessário
+          });
+      }
+    </script>
+  </body>
+</html>

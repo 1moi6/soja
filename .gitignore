@@ -6,3 +6,9 @@ usuario/__pycache__
 usuario/migrations
 ferrugem/migrations
 ferrugem/__pycache__
+node_modules
+appmapas/__pycache__
+appmapas/migrations
+frontend/__pycache__
+frontend/migrations
+media
