@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
         sobrenome: decoded.sobrenome,
       });
       setAuthtokens(tokens);
-      // navigate('/');
+      navigate("/frontend/");
     }
   }
 
@@ -91,7 +91,7 @@ export const AuthProvider = ({ children }) => {
       sobrenome: null,
     });
     setAuthtokens(null);
-    navigate("/");
+    navigate("/frontend/");
     localStorage.removeItem("authtokens");
   };
 

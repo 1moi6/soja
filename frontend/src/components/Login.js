@@ -9,7 +9,7 @@ function Login() {
   return (
     <div>
       <Row className="justify-content-center mt-1">
-        <Col md={4}>
+        <Col md={8}>
           <div className="input-group mb-1">
             <span className="input-group-text" id="basic-addon1">
               <FaUserAlt />
@@ -25,7 +25,7 @@ function Login() {
       </Row>
 
       <Row className="justify-content-center mt-1">
-        <Col md={4}>
+        <Col md={8}>
           <div className="input-group mb-1">
             <span className="input-group-text" id="basic-addon1">
               <FaLock />
@@ -41,7 +41,7 @@ function Login() {
       </Row>
 
       <Row className="justify-content-center mt-3">
-        <Col md={4}>
+        <Col md={8}>
           <button
             type="submit"
             className="btn btn-outline-primary w-100 mb-2"

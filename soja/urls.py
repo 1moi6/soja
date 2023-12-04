@@ -23,6 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/api/', include('usuario.urls')),
     path('', views.Testarotas, name='TestaRotas'),
-    path('api/', include('ferrugem.urls')),
+    path('', include('ferrugem.urls')),
     path('frontend/', include('frontend.urls')),
 ]

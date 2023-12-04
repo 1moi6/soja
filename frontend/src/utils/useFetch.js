@@ -6,8 +6,7 @@ import AuthContext from "../context/AuthContext";
 let useFetch = () => {
   let { authtokens, setAuthtokens, setUser } = useContext(AuthContext);
 
-  // let baseURL = "http://127.0.0.1:8000";
-  let baseURL = "https://rodolfobzsilva19.pythonanywhere.com";
+  let baseURL = "http://127.0.0.1:8000";
 
   let originalRequest = async (url, config) => {
     url = `${baseURL}${url}`;
@@ -24,9 +23,6 @@ let useFetch = () => {
   let refreshToken = async (authtokens) => {
     let response = await fetch(baseURL + "/auth/api/token/refresh/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify({ refresh: authtokens.refresh }),
     });
     let data = await response.json();

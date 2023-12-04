@@ -7,8 +7,7 @@ from .serializers import MapaSerializer
 class MapaList(generics.ListAPIView):
     queryset = Mapa.objects.all()
     serializer_class = MapaSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
+    
 class MapaDetail(generics.RetrieveAPIView):
     queryset = Mapa.objects.all()
     serializer_class = MapaSerializer

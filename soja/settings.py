@@ -15,8 +15,6 @@ from datetime import timedelta
 from decouple import config, Csv
 import os
 
-import appmapas
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -176,7 +174,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'frontend/static/'
-MEDIA_URL = '/media/'
+MEDIA_URL = '/api/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
